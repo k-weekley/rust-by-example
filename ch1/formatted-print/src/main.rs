@@ -21,7 +21,7 @@ fn main() {
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
 
     // As can named arguments.
-    println!("{subject} {verb} {object}"),
+    println!("{subject} {verb} {object}",
             object="the lazy dog",
             subject="the quick brown fox",
             verb="jumps over");
@@ -46,6 +46,15 @@ fn main() {
 
     // However, custom types wuch as this structure require more complicated
     // handling.  This will not work.
-    println!("This struct `{}` won't print...", Structure(3));
-    // FIXME
+    // println!("This struct `{}` won't print...", Structure(3));
+    // FIXME ^ comment out this line.
+
+    // Activity
+    // Add a println! macro that prints: Pi is roughly 3.142 by controlling the number of
+    // decimal places shown.  For the purposes of this exercuse, use `let pi = 3.141592` as an
+    // estimate for pi.
+    let pi = 3.141592;
+
+    // https://doc.rust-lang.org/std/fmt/#precision
+    println!("Pi is roughly {number:.prec$}", prec = 4, number = pi);
 }
